@@ -7,6 +7,7 @@ defaultSitesDirectory="/var/www/html"
 sitesAvailableDirectory="/etc/apache2/sites-available"
 
 
+
 projectTitle
 projectPath
 projectVHOST
