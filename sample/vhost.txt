@@ -1,0 +1,14 @@
+<VirtualHost *:80>
+    ServerName DOMAIN_NAME.TLD
+    ServerAlias www.DOMAIN_NAME.TLD
+    ServerAdmin webmaster@gmail.com
+    DocumentRoot WEB_ROOT/DOMAIN_NAME
+
+    <Directory WEB_ROOT/DOMAIN_NAME>
+        Options +Indexes +FollowSymLinks
+        AllowOverride All
+    </Directory>
+
+    ErrorLog ${APACHE_LOG_DIR}/DOMAIN_NAME.TLD-error.log
+    CustomLog ${APACHE_LOG_DIR}/DOMAIN_NAME.TLD-access.log combined
+</VirtualHost>
