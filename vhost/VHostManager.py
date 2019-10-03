@@ -1,3 +1,5 @@
+from vhost.VHostCreate import VHostCreate
+
 class VHostManager:
     def __init__(self, config):
         self.config = config
@@ -7,3 +9,6 @@ class VHostManager:
             print("Will disable the VHOST.")
         else:
             print("Setting up...")
+
+    def enable():
+        pass
