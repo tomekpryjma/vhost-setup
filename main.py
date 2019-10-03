@@ -3,7 +3,7 @@
 import argparse
 import config
 from option_parser import define_options
-from VHostManager import VHostManager
+from vhost.VHostManager import VHostManager
 
 def main():
     user_config = config.DEFAULTS
