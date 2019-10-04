@@ -33,7 +33,7 @@ class VHostCreate:
         if not apache2_vhost:
             return
 
-        hosts_entry_created = self.create_hosts_entry()
+        hosts_entry_created = self.create_hosts_entry(arguments)
 
     def replace_placeholder_values(self, temp_conf, arguments):
         try:
@@ -68,5 +68,6 @@ class VHostCreate:
             except Exception as error:
                 print(error)
     
-    def create_hosts_entry(self):
-        HostsFileManager.create_entry(self.vhost_filename)
+    def create_hosts_entry(self, arguments):
+        domain_name = arguments["domain_name"] + "." + arguments["tld"]
+        HostsFileManager.create_entry(domain_name)
