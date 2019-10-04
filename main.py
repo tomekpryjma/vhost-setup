@@ -1,6 +1,6 @@
-import os 
+import os
 import argparse
-from option_parser import define_options
+from option_parser import define_options, with_concatonated_site_root
 from vhost.VHostManager import VHostManager
 
 def main():
@@ -11,6 +11,8 @@ def main():
     parser = define_options(parser)
 
     arguments = parser.parse_args()
+
+    arguments = with_concatonated_site_root(arguments)
 
     manager = VHostManager(arguments, working_directory)
 
