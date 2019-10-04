@@ -1,7 +1,8 @@
 import shutil
 
 class VHostCreate:
-    def __init__(self, working_directory):
+    def __init__(self, arguments, working_directory):
+        self.arguments = arguments
         self.working_directory = working_directory
         self.sample_conf = self.working_directory + "/sample/vhost.txt"
         self.temp_conf = self.working_directory + "/sample/tmp.vhost.conf"
