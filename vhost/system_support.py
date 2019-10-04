@@ -2,7 +2,7 @@ import os
 from sys import platform
 
 def os_is_supported():
-    if platform != 'linux' or platform != 'linux2':
+    if platform not in ['linux', 'linux2']:
         print("Only the Linux OS is supported.")
         return False
     return True
