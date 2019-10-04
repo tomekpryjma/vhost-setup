@@ -56,3 +56,13 @@ def define_options(parser):
         help="Tell the script if you want the domain folder to be deleted.")
 
     return parser
+
+def with_concatonated_site_root(arguments):
+    default_site_root = arguments.web_root + '/' + arguments.domain_name
+
+    if arguments.site_root is None:
+        arguments.site_root = default_site_root
+    else:
+        arguments.site_root = default_site_root + "/" + arguments.site_root
+    
+    return arguments
