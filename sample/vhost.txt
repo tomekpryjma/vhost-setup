@@ -2,9 +2,9 @@
     ServerName DOMAIN_NAME.TLD
     ServerAlias www.DOMAIN_NAME.TLD
     ServerAdmin webmaster@gmail.com
-    DocumentRoot WEB_ROOT/DOMAIN_NAME
+    DocumentRoot SITE_ROOT
 
-    <Directory WEB_ROOT/DOMAIN_NAME>
+    <Directory SITE_ROOT>
         Options +Indexes +FollowSymLinks
         AllowOverride All
     </Directory>
