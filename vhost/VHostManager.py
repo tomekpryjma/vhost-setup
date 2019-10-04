@@ -19,6 +19,3 @@ class VHostManager:
 
     def enable():
         pass
-
-    def write_apache2_conf():
-        pass
