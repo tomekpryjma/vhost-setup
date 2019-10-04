@@ -20,7 +20,7 @@ class VHostCreate:
             'site_root': self.arguments.site_root
         }
 
-        self.vhost_filename = arguments["domain_name"] + "." + arguments["tld"]
+        self.vhost_filename = arguments["domain_name"] + ".conf"
 
         temp_conf = copy_file(self.sample_conf, self.temp_conf)
 
