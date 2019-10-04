@@ -9,7 +9,7 @@ class VHostManager:
     def init(self):
 
         if os_is_supported() and server_is_supported():
-            if self.config["disable"]:
+            if self.attributes.disable:
                 print("Will disable the VHOST.")
             else:
                 print("Setting up...")
