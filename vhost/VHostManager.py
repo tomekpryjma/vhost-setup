@@ -14,6 +14,7 @@ class VHostManager:
                 print("Will disable the VHOST.")
             else:
                 print("Setting up...")
+                self.creator.init()
         else:
             sys.exit()
 
