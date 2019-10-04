@@ -30,6 +30,15 @@ def define_options(parser):
         help="Tell the script where your domain's folder is.")
 
     parser.add_argument(
+        "-s",
+        "--site-root",
+        type=str,
+        default=None,
+        metavar="/path/to/site/files",
+        dest="site_root",
+        help="Tell the script where your domain's files are. Uses DOMAIN by default.")
+
+    parser.add_argument(
         "-t",
         "--tld",
         nargs=1,
