@@ -1,5 +1,4 @@
 import argparse
-import config
 from option_parser import define_options
 from vhost.VHostManager import VHostManager
 
