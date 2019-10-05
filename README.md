@@ -4,7 +4,7 @@ The script is meant to make it quick and painless to set up & remove vhosts.
 
 ### Usage
 
-Since the script writes to `/etc/hosts`, `/etc/apache/sites-available` & runs `ctl` commands, it needs `sudo` privilages.
+**Since the script writes to `/etc/hosts`, `/etc/apache/sites-available` & runs `ctl` commands, it needs `sudo` privilages.**
 
 **Example:**
 
