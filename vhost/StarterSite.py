@@ -51,8 +51,8 @@ class StarterSite:
     def amend_permissions(self):
         site_directory = self.arguments["web_root"] + "/" + self.arguments["domain_name"]
 
-        shutil.chown(site_directory, user=1000, group=1000)
+        shutil.chown(site_directory, user=1000, group="www-data")
         os.chmod(site_directory, 0o754)
 
-        shutil.chown(site_directory + "/index.html", user=1000, group=1000)
+        shutil.chown(site_directory + "/index.html", user=1000, group="www-data")
         os.chmod(site_directory + "/index.html", 0o644)
