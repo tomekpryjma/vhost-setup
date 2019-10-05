@@ -22,6 +22,14 @@ def define_options(parser):
         help="Tell the script to disable an existing VHost.")
 
     parser.add_argument(
+        "-p",
+        "--provision",
+        default=False,
+        action="store_true",
+        dest="provision",
+        help="Automatically creates the site folder in your WEB_ROOT.")
+
+    parser.add_argument(
         "-w",
         "--web-root",
         type=str,
