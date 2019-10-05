@@ -47,13 +47,7 @@ def define_options(parser):
         dest="tld",
         help="Tell the script what legal TLD you want your domain to end with.")
 
-    parser.add_argument(
-        "-r",
-        "--remove-domain-folder",
-        default=False,
-        action="store_true",
-        dest="disable",
-        help="Tell the script if you want the domain folder to be deleted.")
+    return parser
 
 def sanitise(arguments):
     arguments = remove_trailing_slash_in_path_arguments(arguments)
