@@ -12,7 +12,7 @@ def main():
 
     arguments = parser.parse_args()
 
-    arguments = with_concatonated_site_root(arguments)
+    arguments = sanitise(arguments)
 
     manager = VHostManager(arguments, working_directory)
 
