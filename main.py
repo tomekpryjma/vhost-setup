@@ -1,6 +1,7 @@
 import os
+import sys
 import argparse
-from option_parser import define_options, with_concatonated_site_root
+from option_parser import define_options, sanitise
 from vhost.VHostManager import VHostManager
 
 def main():
@@ -17,6 +18,8 @@ def main():
     manager = VHostManager(arguments, working_directory)
 
     manager.init()
+
+    sys.exit()
 
 if __name__ == "__main__":
     main()
