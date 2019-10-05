@@ -13,13 +13,14 @@ class VHostManager:
 
         if os_is_supported() and server_is_supported():
             if self.arguments.disable:
-                print("Will disable the VHOST.")
+                print("===============")
+                print("Disabling VHost")
+                print("")
                 cleanup(self.arguments, self.working_directory)
             else:
-                print("Setting up...")
+                print("==============")
+                print("Enabling VHost")
+                print("")
                 self.creator.init()
         else:
             sys.exit()
-
-    def enable():
-        pass
