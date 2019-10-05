@@ -70,4 +70,9 @@ class VHostCreate:
     
     def create_hosts_entry(self, arguments):
         domain_name = arguments["domain_name"] + "." + arguments["tld"]
-        HostsFileManager.create_entry(domain_name)
+        return HostsFileManager.create_entry(domain_name)
+
+    def show_success_message(self, arguments):
+        domain_name = arguments["domain_name"] + "." + arguments["tld"]
+        print("")
+        print("Success! You can view your site at http://" + domain_name)
