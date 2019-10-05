@@ -2,7 +2,9 @@ import os
 import fileinput
 import config
 from helpers.copy_file import copy_file
+from helpers.apachectl import apachectl
 from vhost.HostsFileManager import HostsFileManager
+from vhost.StarterSite import StarterSite
 
 class VHostCreate:
     def __init__(self, arguments, working_directory):
@@ -34,6 +36,17 @@ class VHostCreate:
             return
 
         hosts_entry_created = self.create_hosts_entry(arguments)
+
+        if hosts_entry_created and self.arguments.provision:
+            self.setup_starter_site(arguments)
+        
+        apachectl(arguments["domain_name"] + ".conf")
+
+        self.show_success_message(arguments)
+
+    def setup_starter_site(self, arguments):
+        starter_site = StarterSite(self.sample_directory, arguments)
+        starter_site.init()
 
     def replace_placeholder_values(self, temp_conf, arguments):
         try:
