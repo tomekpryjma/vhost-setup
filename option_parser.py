@@ -11,6 +11,7 @@ def define_options(parser):
 
     parser.add_argument(
         "domain_name",
+        metavar="domain_name",
         help="This is the name of the folder where your site's files are.")
 
     parser.add_argument(
@@ -52,8 +53,9 @@ def define_options(parser):
         "--tld",
         type=str,
         default="local",
+        metavar="local",
         dest="tld",
-        help="Tell the script what legal TLD you want your domain to end with.")
+        help="Tell the script what legal TLD you want your domain to end with. Default is local.")
 
     return parser
 
