@@ -55,7 +55,10 @@ def define_options(parser):
         dest="disable",
         help="Tell the script if you want the domain folder to be deleted.")
 
-    return parser
+def sanitise(arguments):
+    arguments = remove_trailing_slash_in_path_arguments(arguments)
+    arguments = with_concatonated_site_root(arguments)
+    return arguments
 
 def with_concatonated_site_root(arguments):
     default_site_root = arguments.web_root + '/' + arguments.domain_name
@@ -66,3 +69,16 @@ def with_concatonated_site_root(arguments):
         arguments.site_root = default_site_root + "/" + arguments.site_root
     
     return arguments
+
+def remove_trailing_slash_in_path_arguments(arguments):
+    web_root = arguments.web_root
+    site_root = arguments.site_root
+
+    if web_root.endswith("/"):
+        arguments.web_root = web_root[:-1]
+    
+    if site_root is not None and site_root.endswith("/"):
+        arguments.site_root = site_root[:-1]
+    
+    return arguments
+    
